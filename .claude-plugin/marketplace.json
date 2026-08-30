@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "context-vault-skills",
+  "description": "Claude Code skills that keep session context in an Obsidian vault",
+  "owner": {
+    "name": "Chesti Mudasir"
+  },
+  "plugins": [
+    {
+      "name": "context-vault",
+      "description": "Save, load, and search Claude Code session context in an Obsidian vault. Skills: obs-save, obs-load, harpoon, detective.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
