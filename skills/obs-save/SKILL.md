@@ -159,11 +159,32 @@ related:
 - If the session was trivial, still save a note but say so in the summary
 - Do NOT include full code blocks or long outputs — summarize instead
 
-## Step 6: Confirm and compact
+## Step 6: Index the session in a MOC
+
+Every session log must appear in at least one topic MOC. Add the row at save time so no backlog forms.
+
+1. Look for `<vault>/<project>/00 - Master MOC.md` (or any `00 - *.md` hub file).
+2. **No Master MOC?** Skip this step. In Step 7, note that the project has no MOCs yet.
+3. Read the Master MOC. Pick the topic MOC(s) whose scope matches this session. Read them.
+4. Append one row to the session table of each matching MOC, in that table's existing format:
+
+   `| [[YYYY-MM-DD_HH-MM-SS]] | <one-line what-was-done> | <small / medium / large> |`
+
+   Place the row in chronological position (normally last). If a table uses a different column layout, match that layout.
+5. **No topic MOC matches?** Append the row to `Unsorted MOC.md` instead. Create it if missing: standard topic-MOC frontmatter, `> Back to [[00 - Master MOC]]` at the top, a `| Session | What | Scale |` table. Add an `Unsorted` row to the Master MOC's table.
+6. Update each edited MOC's frontmatter `date:` to today. If the Master MOC shows a total session count, add 1.
+
+### Rules
+
+- Append rows and update dates/counts only. Do not reorganize, rewrite, or re-sort MOC content during a save — that is consolidation work, done separately in the vault.
+- Never modify session logs.
+
+## Step 7: Confirm and compact
 
 Report to the user:
 - The session file path
 - A one-line summary of what was saved
 - The count and vault paths of any artifacts copied
+- The MOC row(s) added in Step 6, or a note that the project has no MOCs yet
 
 Then run `/clear` to compact the context.

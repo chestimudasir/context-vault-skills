@@ -6,7 +6,7 @@ Claude Code forgets everything between sessions. These skills give it a memory t
 
 | Skill | Invoke | What it does |
 |-------|--------|--------------|
-| **obs-save** | `/obs-save` | Writes a session log (summary, key changes, decisions) plus any plan/design/spec artifacts to the vault, then clears context. |
+| **obs-save** | `/obs-save` | Writes a session log (summary, key changes, decisions) plus any plan/design/spec artifacts to the vault, adds the session's row to a matching topic MOC, then clears context. |
 | **obs-load** | `/obs-load` | Reads the latest session log for the current project, plus its linked artifacts, and presents a summary. |
 | **harpoon** | `/harpoon <topic>` | Answers a question about past work by walking the graph: Master MOC → topic MOC → 2–5 sessions. About 10 file reads. |
 | **detective** | `/detective <topic>` | Builds the complete story of a topic in two passes (map, then dig). About 35 file reads. |
@@ -30,6 +30,7 @@ The skills expect this layout. One folder per project, named after the project d
 ```
 
 - **Session logs** are written by `obs-save`. Never edit them by hand.
+- `obs-save` also appends the new session's row to a matching topic MOC at save time (or to an `Unsorted MOC` when nothing matches), so sessions do not pile up unindexed. Projects without MOCs are skipped with a note.
 - **MOCs** (Maps of Content) are living documents that index sessions by topic. `harpoon` and `detective` enter the vault only through MOCs — they never grep session files.
 - **Artifacts** are copies of plans/designs/specs your session produced. They often hold more decision history than the session summary.
 

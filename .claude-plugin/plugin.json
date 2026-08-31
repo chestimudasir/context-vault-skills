@@ -1,12 +1,19 @@
 {
   "name": "context-vault",
   "description": "Save, load, and search Claude Code session context in an Obsidian vault. Skills: obs-save, obs-load, harpoon, detective.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Chesti Mudasir"
   },
   "homepage": "https://github.com/chestimudasir/context-vault-skills",
   "repository": "https://github.com/chestimudasir/context-vault-skills",
   "license": "MIT",
-  "keywords": ["obsidian", "context", "memory", "session-log", "knowledge-graph", "skills"]
+  "keywords": [
+    "obsidian",
+    "context",
+    "memory",
+    "session-log",
+    "knowledge-graph",
+    "skills"
+  ]
 }
